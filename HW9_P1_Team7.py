@@ -85,6 +85,7 @@ print(tutor)
 
 print("\n")
 print("########## Problem 6 ################")
+# 6.Display a list of all students, their read score, their tutors, and tutors status. 
 student_tutor = data[["StudentID", "ReadScore", "TutorID", "TutorStatus"]].loc[data['StudentID'].notnull()]
 print(student_tutor)
 
