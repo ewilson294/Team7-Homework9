@@ -45,7 +45,7 @@ cur_date = pd.to_datetime("today").normalize()
 mhist_c = mhist.copy()
 # fill in empty values at EndDate column
 mhist_c['EndDate'].fillna(cur_date, inplace = True)
-# define the average lenght of time per student
+# define the average length of time per student
 duration = mhist_c["EndDate"] - mhist_c['StartDate']
 print("Average length of time a student stayed (or has stayed) in the program is", duration.mean().components.days, "days."  )
 
