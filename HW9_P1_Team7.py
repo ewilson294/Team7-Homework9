@@ -65,7 +65,11 @@ print(students)
 print("\n")
 print("########## Problem 4 ################")
 # 4.List the Read scores of students who were ever taught by tutors whose status is Dropped.
-read_score = data[["StudentID", "ReadScore"]].loc[(data['TutorStatus'] == "Dropped") & (data['StudentID'].notnull())]
+#Get tutor Id who is not dropped
+dropped_tutor = data[["TutorID"]].loc[(data['TutorStatus'] == "Dropped")]
+#Two tutors dropped from the program Id 102 and 107
+print(dropped_tutor)
+read_score = data[["StudentID", "ReadScore"]].loc[(data['TutorID'] != "102") & (data['TutorID'] != "107") & (data['StudentID'].notnull())]
 print(read_score)
 
 print("\n")
@@ -108,7 +112,7 @@ print("\n")
 print("########## Problem 8 ################")
 # 8.List all active students who started in May and June. 
 # Extract active students
-act_std = mhist.loc[data['EndDate'].isnull()]
+act_std = mhist.loc[mhist['EndDate'].isnull()]
 # List all active students who started in May and June
 students = act_std.loc[(act_std['StartDate'].dt.month == 5)|(act_std['StartDate'].dt.month == 6)]
 print(students)
