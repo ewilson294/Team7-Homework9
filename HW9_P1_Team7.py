@@ -65,11 +65,7 @@ print(students)
 print("\n")
 print("########## Problem 4 ################")
 # 4.List the Read scores of students who were ever taught by tutors whose status is Dropped.
-#Get tutor Id who is not dropped
-dropped_tutor = data[["TutorID"]].loc[(data['TutorStatus'] == "Dropped")]
-#Two tutors dropped from the program Id 102 and 107
-print(dropped_tutor)
-read_score = data[["StudentID", "ReadScore"]].loc[(data['TutorID'] != "102") & (data['TutorID'] != "107") & (data['StudentID'].notnull())]
+read_score = data[["StudentID", "ReadScore"]].loc[(data['TutorStatus'] == "Dropped") & (data['StudentID'].notnull())]
 print(read_score)
 
 print("\n")
