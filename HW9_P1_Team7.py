@@ -33,8 +33,8 @@ mhist[['TutorID', 'StudentID']] = mhist[['TutorID', 'StudentID']].astype(str)
 print("\n")
 print("########## Problem 1 ################")
 # 1.Which tutors have a Dropped status and have achieved their certification after 4/01/2018?
-students = tutor.loc[(tutor['TutorStatus'] == "Dropped") & (tutor["CertDate"] > "04/01/2018")]
-print(students)
+dropped_tutors = tutor.loc[(tutor['TutorStatus'] == "Dropped") & (tutor["CertDate"] > "04/01/2018")]
+print(dropped_tutors)
 
 print("\n")
 print("########## Problem 2 ################")
