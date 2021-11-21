@@ -53,7 +53,7 @@ print("\n")
 print("########## Problem 3 ################")
 # merging match_hist data with tutor data
 mhist_tutor = pd.merge(tutor, mhist, on = "TutorID", how = "left")
-# mering match_list data with student data
+# merging match_list data with student data
 mhist_std = pd.merge(student, mhist, on = "StudentID", how = "left")
 # combining the 2 datasets
 data = pd.merge(mhist_tutor, mhist_std, how = "outer")
@@ -80,8 +80,8 @@ count_tutor = pd.DataFrame(count_tutor)
 # rename column
 count_tutor.rename(columns = {'StudentID' : 'Number of Student'}, inplace = True)
 # List the tutors who taught two or more students
-tutor = count_tutor.loc[count_tutor['Number of Student'] >= 2]
-print(tutor)
+tutor_two_students = count_tutor.loc[count_tutor['Number of Student'] >= 2]
+print(tutor_two_students)
 
 print("\n")
 print("########## Problem 6 ################")
